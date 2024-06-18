@@ -4,7 +4,7 @@ function MySlider() {
   const [value, setValue] = useState(128);
   const handleChange = (e) => {
     setValue(e.target.value);
-  };
+  };//hello
   return (
     <div>
       <input
