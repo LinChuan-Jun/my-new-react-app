@@ -1,13 +1,21 @@
+// 從 React 套件中引入 React 函數
 import React from "react";
+// 引入外部的 CSS 文件
 import "./MyCalculator.css";
 
+// 定義一個名為 MyButton 的函數元件，接收 props 作為參數
 function MyButton(props) {
-    const handelClick = (e) =>{
-        props.buttonClicked(e.target.value);
-        // alert(e.target.value);
-    }
+  // 定義一個名為 handelClick 的函數，用於處理按鈕的點擊事件
+  const handelClick = (e) => {
+    // 調用 props 傳遞過來的 buttonClicked 函數，並傳遞當前按鈕的值
+    props.buttonClicked(e.target.value);
+    // alert(e.target.value); // 可以用來調試，彈出當前按鈕的值
+  }
+
+  // 返回 JSX，這部分代碼將會渲染到網頁上
   return (
     <div className="board">
+      {/* 渲染按鈕面板，每個按鈕都有相應的 className 和點擊事件處理函數 */}
       <div>
         <button className="btn btn-action" value="c" onClick={handelClick}>C</button>
         <button className="btn btn-action" value="+/-" onClick={handelClick}>+/-</button>
@@ -41,4 +49,5 @@ function MyButton(props) {
   );
 }
 
+// 將 MyButton 函數元件作為預設導出
 export default MyButton;
